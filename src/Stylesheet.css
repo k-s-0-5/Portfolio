@@ -75,17 +75,19 @@ body {
   text-align: left;
   color: var(--text-color);
   z-index: 3;
+  /* background-color: chartreuse; */
 }
 
 .hero-header {
   text-align: left;
   margin-left: 2vw;
   width: 80%;
-  font-size: clamp(4em, 8vw, 7em);
+  font-size: clamp(4em, 8vw, 6em);
   font-weight: 600;
   color: var(--text-color);
   line-height: 1;
   z-index: 3;
+  /* background-color: #d8d4b6; */
 }
 .highlight-text {
   color: var(--secondary-text-color);
@@ -116,11 +118,11 @@ body {
 }
 
 .hero-model {
-  width: 600px;
-  height: 600px;
+  width: min(90%, 600px);
+  aspect-ratio: 1 / 1;
   z-index: 2;
   justify-self: flex-end;
-  transform: translateX(clamp(-150px, 10vw, 100px));
+  transform: translate(min(30%, 130px), -10%);
 }
 
 /* ==================== Carousel ==================== */
@@ -209,10 +211,10 @@ body {
 
 @keyframes excitement {
   from {
-    transform: rotateZ(-.5deg) scale(1.05);
+    transform: rotateZ(-.5deg);
   }
   to {
-    transform: rotateZ(.5deg) scale(1.05);
+    transform: rotateZ(.5deg);
   }
 }
 

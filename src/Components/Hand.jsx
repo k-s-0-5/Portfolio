@@ -33,36 +33,42 @@ function usePlayAnimations(meshRef, scene, animations, hovered) {
     if (!meshRef.current) return;
     let targetDeg = hovered ? 90 + (wave ? 15. : -25.) : 0.;
     const targetRad = targetDeg * (Math.PI / 180);
-    targetRotRef.current = targetRad;
-    startRotRef.current = meshRef.current.rotation.y;
+    targetRotRef.current = -targetRad;
+    startRotRef.current = meshRef.current.rotation.z;
     timerRef.current = 0.;
   }, [hovered, wave]);
 
   useFrame((state, delta) => {
     if (!meshRef.current) return;
-    // Scale
-    const targetScale = hovered ? 1.5 : 1.4;
+    const targetScale = hovered ? 1 : 1.2;
     meshRef.current.scale.lerp({ x: targetScale, y: targetScale, z: targetScale }, 0.1,);
 
-    const currentDeg = meshRef.current.rotation.y / (Math.PI / 180);
+    const currentDeg = meshRef.current.rotation.z / (Math.PI / 180);
+
+    console.log(currentDeg);
 
     if (hovered){
       timerRef.current = clamp(timerRef.current + (hovered ? 4 : 1.5) * delta, 0., 1.);
-      if (wave && currentDeg - 90 >= 14.){
+      // if (wave && currentDeg - 90 >= 14.){
+      //   setWave(false);
+      // } else if (!wave && currentDeg - 90 <= -24.){
+      //   setWave(true);
+      // }  
+
+      if (wave && currentDeg + 90 <= -14.){
         setWave(false);
-      } else if (!wave && currentDeg - 90 <= -24.){
+      } else if (!wave && currentDeg + 90 >= 24.){
         setWave(true);
       }  
     } 
     else {
-      if(currentDeg > .1){
+      if(currentDeg < .1){
         timerRef.current = clamp(timerRef.current + (hovered ? 4 : 1.5) * delta, 0., 1.);
       } 
     }
     
-    let time = ((4 * Math.pow(timerRef.current, 3)) - (3 * Math.pow(timerRef.current, 4)));;
-
-    meshRef.current.rotation.y = THREE.MathUtils.lerp(startRotRef.current, targetRotRef.current, 
+    let time = ((4 * Math.pow(timerRef.current, 3)) - (3 * Math.pow(timerRef.current, 4)));
+    meshRef.current.rotation.z = THREE.MathUtils.lerp(startRotRef.current, targetRotRef.current, 
         time);
   });
 
@@ -133,19 +139,16 @@ function GetModel() {
   const [hovered, setHovered] = useState(false);
 
   useApplyShader(scene);
+  
   const events = usePlayAnimations(meshRef, scene, animations, hovered);
 
   return (
     <primitive
       object={scene}
       ref={meshRef}
-      scale={[1., 1., 1.]}
-      position={[0, -.5, 1.25]}
-      rotation={[
-        -90 * (Math.PI / 180),
-        0 * (Math.PI / 180),
-        90 * (Math.PI / 180),
-      ]}
+      scale={[1, 1, 1]}
+      position={[0, .5, 0]}
+      rotation={[0, 0, 0]}
       onPointerOver={(e) => {
         e.stopPropagation();
         setHovered(true);

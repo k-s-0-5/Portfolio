@@ -24,7 +24,7 @@ const Hero = () => {
 
                 <div className="hero-model">
                     <Canvas className="canvas">
-                        <group>
+                        <group >
                             <Center>
                                 <Hand />
                             </Center>
