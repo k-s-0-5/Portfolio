@@ -18,18 +18,9 @@ const Carousel = () => {
         carousel.current.children[i].style.transform =
           `rotateY(${angle}deg) translateZ(${800}px)`;
 
-        carousel.current.children[i].style.transition = "filter 0.3s ease";
-
-        carousel.current.children[i].style.filter =
-          `brightness(.5) saturate(.5)`;
+        carousel.current.children[i].children[0].classList.remove('active');
       }
-
-      carousel.current.children[0].style.filter = `brightness(1) saturate(1)`;
-      carousel.current.children[1 % count.current].style.filter =
-        `brightness(0.75) saturate(0.75)`;
-      carousel.current.children[
-        ((-1 % count.current) + count.current) % count.current
-      ].style.filter = `brightness(0.75) saturate(0.75)`;
+      carousel.current.children[0].children[0].classList.add('active'); 
     }
   }, []);
 
@@ -38,7 +29,6 @@ const Carousel = () => {
       carouselRotation.current += right
         ? 360 / count.current
         : -360 / count.current;
-
       carousel.current.style.transform = `rotateY(${carouselRotation.current}deg)`;
 
       const rotations =
@@ -46,20 +36,11 @@ const Carousel = () => {
         (360 / count.current);
 
       for (var i = 0; i < count.current; i++) {
-        var inv = (count.current - i) % count.current ;
+        var frontIndex = (count.current - i) % count.current ;
         if (i == rotations) {
-          carousel.current.children[inv].style.filter =
-            `brightness(1) saturate(1)`;
-        } else if (
-          i ==
-            (rotations - (1 % count.current) + count.current) % count.current ||
-          i == (rotations + (1 % count.current) + count.current) % count.current
-        ) {
-          carousel.current.children[inv].style.filter =
-            `brightness(0.75) saturate(0.75)`;
+          carousel.current.children[frontIndex].children[0].classList.add('active'); 
         } else {
-          carousel.current.children[inv].style.filter =
-            `brightness(0.5) saturate(0.5)`;
+          carousel.current.children[frontIndex].children[0].classList.remove('active');
         }
       }
     }
@@ -73,21 +54,79 @@ const Carousel = () => {
         </button>
         <div className="carousel" id="carousel">
 
-          <div className="card">
-            <img src="../../public/favicon.svg" className="card-img"/>
-            <div className="card-text">
-              <span className="card-title">Project 1</span>
-              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+          <div className="card-wrapper">
+
+            <div className="card">
+              <img src="../../public/favicon.svg" className="card-img"/>
+              <div className="card-text">
+                <span className="card-title">Project 1</span>
+                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+              </div>
+              <button className="card-button t-button">Project's Itch</button>
+              <button className="card-button b-button">Project's Github</button>
             </div>
-            <button className="card-button t-button">Project's Itch</button>
-            <button className="card-button b-button">Project's Github</button>
+
           </div>
 
           
-          <div className="card"></div>
-          <div className="card"></div>
-          <div className="card"></div>
-          <div className="card"></div>
+          <div className="card-wrapper">
+            
+            <div className="card">
+              <img src="../../public/favicon.svg" className="card-img"/>
+              <div className="card-text">
+                <span className="card-title">Project 1</span>
+                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+              </div>
+              <button className="card-button t-button">Project's Itch</button>
+              <button className="card-button b-button">Project's Github</button>
+            </div>
+
+          </div>
+
+          <div className="card-wrapper">
+            
+            <div className="card">
+              <img src="../../public/favicon.svg" className="card-img"/>
+              <div className="card-text">
+                <span className="card-title">Project 1</span>
+                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+              </div>
+              <button className="card-button t-button">Project's Itch</button>
+              <button className="card-button b-button">Project's Github</button>
+            </div>
+
+          </div>
+          
+          <div className="card-wrapper">
+            
+            <div className="card">
+              <img src="../../public/favicon.svg" className="card-img"/>
+              <div className="card-text">
+                <span className="card-title">Project 1</span>
+                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+              </div>
+              <button className="card-button t-button">Project's Itch</button>
+              <button className="card-button b-button">Project's Github</button>
+            </div>
+
+          </div>
+
+
+          <div className="card-wrapper">
+            
+            <div className="card">
+              <img src="../../public/favicon.svg" className="card-img"/>
+              <div className="card-text">
+                <span className="card-title">Project 1</span>
+                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+              </div>
+              <button className="card-button t-button">Project's Itch</button>
+              <button className="card-button b-button">Project's Github</button>
+            </div>
+
+          </div>
+
+
         </div>
         <button className="btn-1 right" onClick={() => rotateCarousel(true)}>
           <span>→</span>
