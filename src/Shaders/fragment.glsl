@@ -12,9 +12,9 @@ void main() {
     vec3 lightDir = vec3(0, 0, 1);
 
 
-    vec3 color = vec3(.93, .78, .0);
-    vec3 ambientColor = vec3(.2, .1, .00);
-    vec3 fresnelColor = vec3(0.25, 0.25, 0.25);
+    vec3 color = vec3(.94, .78, .0);
+    vec3 ambientColor = vec3(.23, .1, .00);
+    vec3 fresnelColor = vec3(0.27, 0.25, 0.25);
     
     // vec3 diffuse = max(dot(normal, lightDir), 0.2) * color;
 

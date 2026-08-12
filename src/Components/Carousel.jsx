@@ -47,92 +47,77 @@ const Carousel = () => {
   };
 
   return (
-    <>
-      <div className="carousel-wrapper" ref={carouselRef}>
-        <button className="btn-1 left" onClick={() => rotateCarousel(false)}>
-          <span>←</span>
-        </button>
-        <div className="carousel" id="carousel">
+    <div className="carousel-wrapper" ref={carouselRef}>
+      <button className="carousel-btn left" onClick={() => rotateCarousel(false)}>
+        <span>←</span>
+      </button>
+      <div className="carousel" id="carousel">
 
-          <div className="card-wrapper">
-
-            <div className="card">
-              <img src="../../public/favicon.svg" className="card-img"/>
-              <div className="card-text">
-                <span className="card-title">Project 1</span>
-                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-              </div>
-              <button className="card-button t-button">Project's Itch</button>
-              <button className="card-button b-button">Project's Github</button>
+        <div className="card-wrapper">
+          <div className="card">
+            <img src="../../public/favicon.svg" className="card-img"/>
+            <div className="card-text">
+              <span className="card-title">Project 1</span>
+              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
             </div>
-
+            <button className="card-button t-button">Project's Itch</button>
+            <button className="card-button b-button">Project's Github</button>
           </div>
-
-          
-          <div className="card-wrapper">
-            
-            <div className="card">
-              <img src="../../public/favicon.svg" className="card-img"/>
-              <div className="card-text">
-                <span className="card-title">Project 1</span>
-                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-              </div>
-              <button className="card-button t-button">Project's Itch</button>
-              <button className="card-button b-button">Project's Github</button>
-            </div>
-
-          </div>
-
-          <div className="card-wrapper">
-            
-            <div className="card">
-              <img src="../../public/favicon.svg" className="card-img"/>
-              <div className="card-text">
-                <span className="card-title">Project 1</span>
-                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-              </div>
-              <button className="card-button t-button">Project's Itch</button>
-              <button className="card-button b-button">Project's Github</button>
-            </div>
-
-          </div>
-          
-          <div className="card-wrapper">
-            
-            <div className="card">
-              <img src="../../public/favicon.svg" className="card-img"/>
-              <div className="card-text">
-                <span className="card-title">Project 1</span>
-                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-              </div>
-              <button className="card-button t-button">Project's Itch</button>
-              <button className="card-button b-button">Project's Github</button>
-            </div>
-
-          </div>
-
-
-          <div className="card-wrapper">
-            
-            <div className="card">
-              <img src="../../public/favicon.svg" className="card-img"/>
-              <div className="card-text">
-                <span className="card-title">Project 1</span>
-                <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-              </div>
-              <button className="card-button t-button">Project's Itch</button>
-              <button className="card-button b-button">Project's Github</button>
-            </div>
-
-          </div>
-
-
         </div>
-        <button className="btn-1 right" onClick={() => rotateCarousel(true)}>
-          <span>→</span>
-        </button>
+        
+        <div className="card-wrapper">
+          <div className="card">
+            <img src="../../public/favicon.svg" className="card-img"/>
+            <div className="card-text">
+              <span className="card-title">Project 1</span>
+              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            </div>
+            <button className="card-button t-button">Project's Itch</button>
+            <button className="card-button b-button">Project's Github</button>
+          </div>
+        </div>
+
+        <div className="card-wrapper">
+          <div className="card">
+            <img src="../../public/favicon.svg" className="card-img"/>
+            <div className="card-text">
+              <span className="card-title">Project 1</span>
+              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            </div>
+            <button className="card-button t-button">Project's Itch</button>
+            <button className="card-button b-button">Project's Github</button>
+          </div>
+        </div>
+        
+        <div className="card-wrapper">
+          <div className="card">
+            <img src="../../public/favicon.svg" className="card-img"/>
+            <div className="card-text">
+              <span className="card-title">Project 1</span>
+              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            </div>
+            <button className="card-button t-button">Project's Itch</button>
+            <button className="card-button b-button">Project's Github</button>
+          </div>
+        </div>
+
+        <div className="card-wrapper">
+          <div className="card">
+            <img src="../../public/favicon.svg" className="card-img"/>
+            <div className="card-text">
+              <span className="card-title">Project 1</span>
+              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            </div>
+            <button className="card-button t-button">Project's Itch</button>
+            <button className="card-button b-button">Project's Github</button>
+          </div>
+        </div>
+
       </div>
-    </>
+      <button className="carousel-btn right" onClick={() => rotateCarousel(true)}>
+        <span>→</span>
+      </button>
+    </div>
   );
 };
 

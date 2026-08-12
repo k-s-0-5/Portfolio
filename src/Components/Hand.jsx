@@ -40,20 +40,13 @@ function usePlayAnimations(meshRef, scene, animations, hovered) {
 
   useFrame((state, delta) => {
     if (!meshRef.current) return;
-    const targetScale = hovered ? 1 : 1.2;
+    const targetScale = hovered ? 1 : 1.1;
     meshRef.current.scale.lerp({ x: targetScale, y: targetScale, z: targetScale }, 0.1,);
 
     const currentDeg = meshRef.current.rotation.z / (Math.PI / 180);
-
-    console.log(currentDeg);
-
+    
     if (hovered){
       timerRef.current = clamp(timerRef.current + (hovered ? 4 : 1.5) * delta, 0., 1.);
-      // if (wave && currentDeg - 90 >= 14.){
-      //   setWave(false);
-      // } else if (!wave && currentDeg - 90 <= -24.){
-      //   setWave(true);
-      // }  
 
       if (wave && currentDeg + 90 <= -14.){
         setWave(false);
@@ -147,7 +140,7 @@ function GetModel() {
       object={scene}
       ref={meshRef}
       scale={[1, 1, 1]}
-      position={[0, .5, 0]}
+      position={[0, -.5, 0]}
       rotation={[0, 0, 0]}
       onPointerOver={(e) => {
         e.stopPropagation();
