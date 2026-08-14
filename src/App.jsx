@@ -22,9 +22,10 @@ const App = () => {
         <div className="main-content">
           <Hero />
           <Carousel />
+          <Carousel />
           <Footer />
         </div>
-        </div>
+      </div>
     </>
   );
 };

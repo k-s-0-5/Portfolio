@@ -16,11 +16,11 @@ const Carousel = () => {
         const angle = i * (360 / count.current);
         const depth = Math.abs(Math.sin(angle * (Math.PI / 180)));
         carousel.current.children[i].style.transform =
-          `rotateY(${angle}deg) translateZ(${800}px)`;
+          `rotateY(${angle}deg) translateZ(${600}px)`;
 
-        carousel.current.children[i].children[0].classList.remove('active');
+        carousel.current.children[i].children[0].classList.remove("active");
       }
-      carousel.current.children[0].children[0].classList.add('active'); 
+      carousel.current.children[0].children[0].classList.add("active");
     }
   }, []);
 
@@ -36,88 +36,90 @@ const Carousel = () => {
         (360 / count.current);
 
       for (var i = 0; i < count.current; i++) {
-        var frontIndex = (count.current - i) % count.current ;
+        var frontIndex = (count.current - i) % count.current;
         if (i == rotations) {
-          carousel.current.children[frontIndex].children[0].classList.add('active'); 
+          carousel.current.children[frontIndex].children[0].classList.add(
+            "active",
+          );
         } else {
-          carousel.current.children[frontIndex].children[0].classList.remove('active');
+          carousel.current.children[frontIndex].children[0].classList.remove(
+            "active",
+          );
         }
       }
     }
   };
 
   return (
+    <>
+    <div className="carousel-title">
+      Personal Projects
+    </div>
     <div className="carousel-wrapper" ref={carouselRef}>
-      <button className="carousel-btn left" onClick={() => rotateCarousel(false)}>
+      <button
+        className="carousel-btn left"
+        onClick={() => rotateCarousel(false)}
+      >
         <span>←</span>
       </button>
+
       <div className="carousel" id="carousel">
-
         <div className="card-wrapper">
           <div className="card">
-            <img src="../../public/favicon.svg" className="card-img"/>
-            <div className="card-text">
-              <span className="card-title">Project 1</span>
-              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            <div className="card-img-background">
+              <img src="../../public/PureAzure.png" className="card-img" />
             </div>
-            <button className="card-button t-button">Project's Itch</button>
-            <button className="card-button b-button">Project's Github</button>
+            <div className="card-text">
+              <span className="card-title">Pure Azure Reworked</span>
+              <p>
+                A personal extension of a group Unity project focused mainly on
+                decoupling code, improving enemy AI, and improving art.
+              </p>
+            </div>
+            <a className="card-button t-button" href="https://ks05.itch.io/pure-azure-reworked">Project's Itch</a>
+            <a className="card-button" href="https://github.com/k-s-0-5/pure-azure">Project's Github</a>
           </div>
         </div>
-        
         <div className="card-wrapper">
           <div className="card">
-            <img src="../../public/favicon.svg" className="card-img"/>
-            <div className="card-text">
-              <span className="card-title">Project 1</span>
-              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            <div className="card-img-background">
+              <img src="../../public/PiratesTD.png" className="card-img" />
             </div>
-            <button className="card-button t-button">Project's Itch</button>
-            <button className="card-button b-button">Project's Github</button>
+            <div className="card-text">
+              <span className="card-title">PiratesTD</span>
+              <p>
+                A 2D tower defense about defending an island from invading Pirates. 
+                Utilizes A* pathfinding to allow the player to create their own path for enemies.
+              </p>
+            </div>
+            <a className="card-button t-button" href="https://ks05.itch.io/piratestd">Project's Itch</a>
+            <a className="card-button" href="https://github.com/k-s-0-5/PiratesTD">Project's Github</a>
           </div>
         </div>
-
         <div className="card-wrapper">
           <div className="card">
-            <img src="../../public/favicon.svg" className="card-img"/>
-            <div className="card-text">
-              <span className="card-title">Project 1</span>
-              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
+            <div className="card-img-background">
+              <img src="../../public/Login.png" className="card-img" />
             </div>
-            <button className="card-button t-button">Project's Itch</button>
-            <button className="card-button b-button">Project's Github</button>
+            <div className="card-text">
+              <span className="card-title">Test Chat Webapp</span>
+              <p>
+                A stateless local chat webapp created using the Spring Boot framework.  
+              </p>
+            </div>
+            <a className="card-button t-button" href="https://github.com/k-s-0-5/chat-app">Project's Github</a>
           </div>
         </div>
-        
-        <div className="card-wrapper">
-          <div className="card">
-            <img src="../../public/favicon.svg" className="card-img"/>
-            <div className="card-text">
-              <span className="card-title">Project 1</span>
-              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-            </div>
-            <button className="card-button t-button">Project's Itch</button>
-            <button className="card-button b-button">Project's Github</button>
-          </div>
-        </div>
-
-        <div className="card-wrapper">
-          <div className="card">
-            <img src="../../public/favicon.svg" className="card-img"/>
-            <div className="card-text">
-              <span className="card-title">Project 1</span>
-              <p>This was my first project completed using the following languages: Lorem Ipsum...</p>
-            </div>
-            <button className="card-button t-button">Project's Itch</button>
-            <button className="card-button b-button">Project's Github</button>
-          </div>
-        </div>
-
       </div>
-      <button className="carousel-btn right" onClick={() => rotateCarousel(true)}>
+      
+      <button
+        className="carousel-btn right"
+        onClick={() => rotateCarousel(true)}
+      >
         <span>→</span>
       </button>
     </div>
+    </>
   );
 };
 
