@@ -27,8 +27,8 @@ const Carousel = () => {
   const rotateCarousel = (right) => {
     if (count.current > 0) {
       carouselRotation.current += right
-        ? 360 / count.current
-        : -360 / count.current;
+        ? -360 / count.current
+        : 360 / count.current;
       carousel.current.style.transform = `rotateY(${carouselRotation.current}deg)`;
 
       const rotations =
@@ -57,7 +57,7 @@ const Carousel = () => {
     </div>
     <div className="carousel-wrapper" ref={carouselRef}>
       <button
-        className="carousel-btn left"
+        className="carousel-button left"
         onClick={() => rotateCarousel(false)}
       >
         <span>←</span>
@@ -113,7 +113,7 @@ const Carousel = () => {
       </div>
       
       <button
-        className="carousel-btn right"
+        className="carousel-button right"
         onClick={() => rotateCarousel(true)}
       >
         <span>→</span>

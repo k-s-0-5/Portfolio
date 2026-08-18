@@ -20,8 +20,8 @@ const App = () => {
       <div className="grid">
         <div className="gradient"></div>
         <div className="main-content">
+          <div id="navbar" style={{height: '100px'}}></div>
           <Hero />
-          <Carousel />
           <Carousel />
           <Footer />
         </div>
