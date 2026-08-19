@@ -20,6 +20,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="spiel" style={{ gridArea: "spiel" }}>
+          <div style={{ fontWeight: "bold" }}>About Me:</div>
           <div>
             I'm a developer based in Queensland. I enjoy building games and
             websites' frontends and backends. Outside of work, I love learning
@@ -29,16 +30,44 @@ const Hero = () => {
         <div className="stack" style={{ gridArea: "stack" }}>
           <div className="stack-carousel">
             <div className="group">
-              <div className="stack-item">a</div>
-              <div className="stack-item">b</div>
-              <div className="stack-item">c</div>
-              <div className="stack-item">d</div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+              </div>
             </div>
             <div className="group">
-              <div className="stack-item">a</div>
-              <div className="stack-item">b</div>
-              <div className="stack-item">c</div>
-              <div className="stack-item">d</div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+              </div>
+              <div className="stack-item">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+              </div>
             </div>
           </div>
         </div>

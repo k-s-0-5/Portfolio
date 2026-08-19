@@ -52,73 +52,115 @@ const Carousel = () => {
 
   return (
     <>
-    <div className="carousel-title">
-      Personal Projects
-    </div>
-    <div className="carousel-wrapper" ref={carouselRef}>
-      <button
-        className="carousel-button left"
-        onClick={() => rotateCarousel(false)}
-      >
-        <span>←</span>
-      </button>
+      <div className="carousel-title">Personal Projects</div>
+      <div className="carousel-wrapper" ref={carouselRef}>
+        <button
+          className="carousel-button left"
+          onClick={() => rotateCarousel(false)}
+        >
+          <span>←</span>
+        </button>
 
-      <div className="carousel" id="carousel">
-        <div className="card-wrapper">
-          <div className="card">
-            <div className="card-img-background">
-              <img src="../../public/PureAzure.png" className="card-img" />
-            </div>
-            <div className="card-text">
+        <div className="carousel" id="carousel">
+          <div className="card-wrapper">
+            <div className="card">
+              <div className="card-img-background">
+                <img src="../../public/PureAzure.png" className="card-img" />
+              </div>
               <span className="card-title">Pure Azure Reworked</span>
-              <p>
-                A personal extension of a group Unity project focused mainly on
-                decoupling code, improving enemy AI, and improving art.
-              </p>
+              <div className="card-text">
+                <p>
+                  A personal extension of a group Unity project focused mainly
+                  on decoupling code, improving enemy AI, and improving art.
+                  <ul>
+                    <li>C#</li>
+                  </ul>
+                </p>
+              </div>
+              <div className="button-wrapper">
+                <a
+                  className="card-button t-button"
+                  href="https://ks05.itch.io/pure-azure-reworked"
+                >
+                  Project's Itch
+                </a>
+                <a
+                  className="card-button"
+                  href="https://github.com/k-s-0-5/pure-azure"
+                >
+                  Project's Github
+                </a>
+              </div>
             </div>
-            <a className="card-button t-button" href="https://ks05.itch.io/pure-azure-reworked">Project's Itch</a>
-            <a className="card-button" href="https://github.com/k-s-0-5/pure-azure">Project's Github</a>
           </div>
-        </div>
-        <div className="card-wrapper">
-          <div className="card">
-            <div className="card-img-background">
-              <img src="../../public/PiratesTD.png" className="card-img" />
-            </div>
-            <div className="card-text">
+          <div className="card-wrapper">
+            <div className="card">
+              <div className="card-img-background">
+                <img src="../../public/PiratesTD.png" className="card-img" />
+              </div>
               <span className="card-title">PiratesTD</span>
-              <p>
-                A 2D tower defense about defending an island from invading Pirates. 
-                Utilizes A* pathfinding to allow the player to create their own path for enemies.
-              </p>
+              <div className="card-text">
+                <p>
+                  A 2D tower defense about defending an island from invading
+                  Pirates. Utilizes A* pathfinding to allow the player to create
+                  their own path for enemies.
+                  <ul>
+                    <li>C#</li>
+                  </ul>
+                </p>
+              </div>
+              <div className="button-wrapper">
+                <a
+                  className="card-button t-button"
+                  href="https://ks05.itch.io/piratestd"
+                >
+                  Project's Itch
+                </a>
+                <a
+                  className="card-button"
+                  href="https://github.com/k-s-0-5/PiratesTD"
+                >
+                  Project's Github
+                </a>
+              </div>
             </div>
-            <a className="card-button t-button" href="https://ks05.itch.io/piratestd">Project's Itch</a>
-            <a className="card-button" href="https://github.com/k-s-0-5/PiratesTD">Project's Github</a>
           </div>
-        </div>
-        <div className="card-wrapper">
-          <div className="card">
-            <div className="card-img-background">
-              <img src="../../public/Login.png" className="card-img" />
-            </div>
-            <div className="card-text">
+          <div className="card-wrapper">
+            <div className="card">
+              <div className="card-img-background">
+                <img src="../../public/Login.png" className="card-img" />
+              </div>
               <span className="card-title">Test Chat Webapp</span>
-              <p>
-                A stateless local chat webapp created using the Spring Boot framework.  
-              </p>
+              <div className="card-text">
+                <p>
+                  A stateless local chat webapp created using the Spring Boot
+                  framework.
+                  <ul>
+                    <li>Java</li>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                  </ul>
+                </p>
+              </div>
+              <div className="button-wrapper">
+                <a
+                  className="card-button t-button"
+                  href="https://github.com/k-s-0-5/chat-app"
+                >
+                  Project's Github
+                </a>
+              </div>
             </div>
-            <a className="card-button t-button" href="https://github.com/k-s-0-5/chat-app">Project's Github</a>
           </div>
         </div>
+
+        <button
+          className="carousel-button right"
+          onClick={() => rotateCarousel(true)}
+        >
+          <span>→</span>
+        </button>
       </div>
-      
-      <button
-        className="carousel-button right"
-        onClick={() => rotateCarousel(true)}
-      >
-        <span>→</span>
-      </button>
-    </div>
     </>
   );
 };
