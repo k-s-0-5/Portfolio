@@ -95,6 +95,7 @@ li {
 
 .hero-grid {
   color: var(--text-color);
+  margin: 0 auto;
   display: grid;
   justify-self: center;
   width: clamp(400px, 70vw, 1100px);
@@ -239,11 +240,12 @@ li {
 /* ==================== Carousel ==================== */
 
 .carousel-title {
+  margin: 0 auto;
+  text-align: center;
   justify-self: center;
   font-size: clamp(1.3em, 2vw, 2em);
   color: var(--text-color);
   font-weight: 500;
-  text-align: left;
 }
 
 .carousel-wrapper {
@@ -351,7 +353,7 @@ li {
 .card-text {
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0);
+  scrollbar-color: rgba(255, 255, 255, 0);
   padding: 0em 1em;
 }
 
@@ -366,10 +368,10 @@ li {
   text-align: center;
 }
 
-.button-wrapper{
+.button-wrapper {
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: 0.5em;
   padding: 1em 0em;
 }
 
