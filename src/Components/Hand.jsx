@@ -128,7 +128,7 @@ function useApplyShader(scene) {
 
 function GetModel() {
   const meshRef = useRef();
-  const { scene, animations } = useGLTF("/Hand.glb");
+  const { scene, animations } = useGLTF(`${import.meta.env.BASE_URL}/Hand.glb`);
   const [hovered, setHovered] = useState(false);
 
   useApplyShader(scene);

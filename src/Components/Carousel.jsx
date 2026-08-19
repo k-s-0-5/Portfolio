@@ -65,17 +65,17 @@ const Carousel = () => {
           <div className="card-wrapper">
             <div className="card">
               <div className="card-img-background">
-                <img src="../../public/PureAzure.png" className="card-img" />
+                <img src={`${import.meta.env.BASE_URL}/PureAzure.png`} className="card-img" />
               </div>
               <span className="card-title">Pure Azure Reworked</span>
               <div className="card-text">
                 <p>
                   A personal extension of a group Unity project focused mainly
                   on decoupling code, improving enemy AI, and improving art.
-                  <ul>
-                    <li>C#</li>
-                  </ul>
                 </p>
+                <ul>
+                  <li>C#</li>
+                </ul>
               </div>
               <div className="button-wrapper">
                 <a
@@ -96,7 +96,7 @@ const Carousel = () => {
           <div className="card-wrapper">
             <div className="card">
               <div className="card-img-background">
-                <img src="../../public/PiratesTD.png" className="card-img" />
+                <img src={`${import.meta.env.BASE_URL}/PiratesTD.png`} className="card-img" />
               </div>
               <span className="card-title">PiratesTD</span>
               <div className="card-text">
@@ -104,10 +104,10 @@ const Carousel = () => {
                   A 2D tower defense about defending an island from invading
                   Pirates. Utilizes A* pathfinding to allow the player to create
                   their own path for enemies.
-                  <ul>
+                </p>
+                <ul>
                     <li>C#</li>
                   </ul>
-                </p>
               </div>
               <div className="button-wrapper">
                 <a
@@ -128,19 +128,19 @@ const Carousel = () => {
           <div className="card-wrapper">
             <div className="card">
               <div className="card-img-background">
-                <img src="../../public/Login.png" className="card-img" />
+                <img src={`${import.meta.env.BASE_URL}/Login.png`} className="card-img" />
               </div>
               <span className="card-title">Test Chat Webapp</span>
               <div className="card-text">
                 <p>
                   A stateless local chat webapp created using the Spring Boot
                   framework.
-                  <ul>
+                </p>
+                <ul>
                     <li>Java</li>
                     <li>JavaScript</li>
                     <li>HTML</li>
                   </ul>
-                </p>
               </div>
               <div className="button-wrapper">
                 <a
