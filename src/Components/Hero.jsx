@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
         <div style={{ gridArea: "model" }}>
           <div className="hero-model">
-            <Canvas className="canvas">
+            <Canvas>
               <Hand />
             </Canvas>
           </div>
@@ -72,7 +72,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="button" style={{ gridArea: "button" }}>
-          <p className="hero-subheading">Check out my GitHub!</p>
+          <p>Check out my GitHub!</p>
           <a className="hero-button" href="https://github.com/k-s-0-5">
             Github
           </a>
