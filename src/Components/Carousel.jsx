@@ -79,7 +79,7 @@ const Carousel = () => {
               </div>
               <div className="button-wrapper">
                 <a
-                  className="card-button t-button"
+                  className="card-button"
                   href="https://ks05.itch.io/pure-azure-reworked"
                 >
                   Project's Itch
@@ -111,7 +111,7 @@ const Carousel = () => {
               </div>
               <div className="button-wrapper">
                 <a
-                  className="card-button t-button"
+                  className="card-button"
                   href="https://ks05.itch.io/piratestd"
                 >
                   Project's Itch
@@ -144,7 +144,7 @@ const Carousel = () => {
               </div>
               <div className="button-wrapper">
                 <a
-                  className="card-button t-button"
+                  className="card-button"
                   href="https://github.com/k-s-0-5/chat-app"
                 >
                   Project's Github
