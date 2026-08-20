@@ -145,7 +145,7 @@ const Carousel = () => {
                   A stateless local chat app created with the Spring Boot Java
                   framework. Allows users to create accounts, log in, and
                   communicate with connected users in real-time through the use
-                  of websockets.
+                  of WebSockets.
                 </p>
                 <ul>
                   <li>Java</li>
