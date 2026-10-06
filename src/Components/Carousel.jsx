@@ -12,7 +12,9 @@ const Carousel = () => {
 
   useEffect(() => {
     groupRef.current = carouselRef.current.querySelectorAll(".group");
-    cardsRef.current = carouselRef.current.querySelector(".group").querySelectorAll(".card");
+    cardsRef.current = carouselRef.current
+      .querySelector(".group")
+      .querySelectorAll(".card");
 
     setSlideWidth(
       cardsRef.current[0].getBoundingClientRect().width +
@@ -31,7 +33,7 @@ const Carousel = () => {
   function handleTransitionEnd() {
     const carousel = carouselRef.current;
     isMoving.current = false;
-    if(index > cardsRef.current.length - 1 || index < 0) {
+    if (index > cardsRef.current.length - 1 || index < 0) {
       const next = getMod(index, cardsRef.current.length);
       carousel.style.transition = `none`;
       carousel.style.transform = `translateX(calc(${-next * slideWidth}px))`;
@@ -51,9 +53,23 @@ const Carousel = () => {
 
   return (
     <>
-    <button className="carousel-control left" onClick={() => updateIndex(-1)}>←</button>
+      <button className="carousel-control left" onClick={() => updateIndex(-1)}>
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M6 12H18M6 12L11 7M6 12L11 17"
+            stroke="#050E0B"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
       <div className="scroll" id={"scroll"} ref={trackRef}>
-        <div className="carousel" ref={carouselRef} onTransitionEnd={handleTransitionEnd}>
+        <div
+          className="carousel"
+          ref={carouselRef}
+          onTransitionEnd={handleTransitionEnd}
+        >
           <div className="group">
             <div className="card active">
               <div className="card-img-background">
@@ -347,7 +363,17 @@ const Carousel = () => {
           </div>
         </div>
       </div>
-      <button className="carousel-control right" onClick={() => updateIndex(1)}>→</button>
+      <button className="carousel-control right" onClick={() => updateIndex(1)}>
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M6 12H18M18 12L13 7M18 12L13 17"
+            stroke="#050E0B"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
     </>
   );
 };

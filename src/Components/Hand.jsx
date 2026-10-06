@@ -31,37 +31,51 @@ function usePlayAnimations(meshRef, scene, animations, hovered) {
 
   useEffect(() => {
     if (!meshRef.current) return;
-    let targetDeg = hovered ? 90 + (wave ? 15. : -25.) : 0.;
+    let targetDeg = hovered ? 90 + (wave ? 15 : -25) : 0;
     const targetRad = targetDeg * (Math.PI / 180);
     targetRotRef.current = -targetRad;
     startRotRef.current = meshRef.current.rotation.z;
-    timerRef.current = 0.;
+    timerRef.current = 0;
   }, [hovered, wave]);
 
   useFrame((state, delta) => {
     if (!meshRef.current) return;
     const targetScale = hovered ? 1.2 : 1.3;
-    meshRef.current.scale.lerp({ x: targetScale, y: targetScale, z: targetScale }, 0.1);
+    meshRef.current.scale.lerp(
+      { x: targetScale, y: targetScale, z: targetScale },
+      0.1,
+    );
 
     const currentDeg = meshRef.current.rotation.z / (Math.PI / 180);
-    
-    if (hovered){
-      timerRef.current = clamp(timerRef.current + (hovered ? 4 : 1.5) * delta, 0., 1.);
-      if (wave && currentDeg + 90 <= -14.){
+
+    if (hovered) {
+      timerRef.current = clamp(
+        timerRef.current + (hovered ? 4 : 1.5) * delta,
+        0,
+        1,
+      );
+      if (wave && currentDeg + 90 <= -14) {
         setWave(false);
-      } else if (!wave && currentDeg + 90 >= 24.){
+      } else if (!wave && currentDeg + 90 >= 24) {
         setWave(true);
-      }  
-    } 
-    else {
-      if(currentDeg < .1){
-        timerRef.current = clamp(timerRef.current + (hovered ? 4 : 1.5) * delta, 0., 1.);
-      } 
+      }
+    } else {
+      if (currentDeg < 0.1) {
+        timerRef.current = clamp(
+          timerRef.current + (hovered ? 4 : 1.5) * delta,
+          0,
+          1,
+        );
+      }
     }
-    
-    let time = ((4 * Math.pow(timerRef.current, 3)) - (3 * Math.pow(timerRef.current, 4)));
-    meshRef.current.rotation.z = THREE.MathUtils.lerp(startRotRef.current, targetRotRef.current, 
-        time);
+
+    let time =
+      4 * Math.pow(timerRef.current, 3) - 3 * Math.pow(timerRef.current, 4);
+    meshRef.current.rotation.z = THREE.MathUtils.lerp(
+      startRotRef.current,
+      targetRotRef.current,
+      time,
+    );
   });
 
   return {
@@ -123,7 +137,7 @@ function GetModel() {
   const [hovered, setHovered] = useState(false);
 
   useApplyShader(scene);
-  
+
   const events = usePlayAnimations(meshRef, scene, animations, hovered);
 
   return (
@@ -146,7 +160,5 @@ function GetModel() {
 }
 
 export default function Hand() {
-  return (
-    <GetModel />
-  );
-};
+  return <GetModel />;
+}
