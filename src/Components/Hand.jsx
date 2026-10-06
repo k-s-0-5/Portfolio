@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useGLTF, useAnimations, useFBO } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import * as THREE from "three";
 import vertexShader from "../Shaders/vertex.glsl?raw";
 import fragmentShader from "../Shaders/fragment.glsl?raw";
@@ -40,14 +40,13 @@ function usePlayAnimations(meshRef, scene, animations, hovered) {
 
   useFrame((state, delta) => {
     if (!meshRef.current) return;
-    const targetScale = hovered ? 1 : 1.1;
-    meshRef.current.scale.lerp({ x: targetScale, y: targetScale, z: targetScale }, 0.1,);
+    const targetScale = hovered ? 1.2 : 1.3;
+    meshRef.current.scale.lerp({ x: targetScale, y: targetScale, z: targetScale }, 0.1);
 
     const currentDeg = meshRef.current.rotation.z / (Math.PI / 180);
     
     if (hovered){
       timerRef.current = clamp(timerRef.current + (hovered ? 4 : 1.5) * delta, 0., 1.);
-
       if (wave && currentDeg + 90 <= -14.){
         setWave(false);
       } else if (!wave && currentDeg + 90 >= 24.){
@@ -73,14 +72,6 @@ function usePlayAnimations(meshRef, scene, animations, hovered) {
 
 function useApplyShader(scene) {
   const { camera } = useThree();
-
-  const uniforms = useMemo(
-    () => ({
-      uTime: { value: 0 },
-      cameraPos: { value: camera.position },
-    }),
-    [],
-  );
 
   const lightCamera = useMemo(() => {
     const cam = new THREE.OrthographicCamera(-5, 5, 5, -5, 0.1, 20);
@@ -139,8 +130,8 @@ function GetModel() {
     <primitive
       object={scene}
       ref={meshRef}
-      scale={[1, 1, 1]}
-      position={[0, -.5, 0]}
+      scale={[1.3, 1.3, 1.3]}
+      position={[0, -1.1, 0]}
       rotation={[0, 0, 0]}
       onPointerOver={(e) => {
         e.stopPropagation();

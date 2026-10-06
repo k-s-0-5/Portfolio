@@ -17,15 +17,9 @@ import Footer from "./Components/Footer.jsx";
 const App = () => {
   return (
     <>
-      <div className="grid">
-        <div className="gradient"></div>
-        <div className="main-content">
-          <div id="navbar" style={{height: '100px'}}></div>
-          <Hero />
-          <Carousel />
-          <Footer />
-        </div>
-      </div>
+      <title>Kjeld | Developer</title>
+      <Hero />
+      <Footer />
     </>
   );
 };

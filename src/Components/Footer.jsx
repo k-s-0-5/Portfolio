@@ -5,19 +5,19 @@ import { useState, useMemo, useRef, useEffect } from "react";
 const Footer = () => {
   return (
     <>
-    <div className="footer">
+    <footer className="footer">
       <div className="footer-item" style={{gridArea: "box-1"}}></div>
       <div className="footer-item" style={{gridArea: "box-2"}}>
-        <div>
-          Get in contact with me at: <a href="mailto:KjeldS2005@gmail.com">KjeldS2005@gmail.com</a><br/>
+        <p>
+          Get in contact with me at: <span className="bright-text">KjeldS2005@gmail.com</span><br/>
           Find my GitHub at: <a href="https://github.com/k-s-0-5">@k-s-0-5</a>
-        </div>
-        <div>
+        </p>
+        <p>
           2026
-        </div>
+        </p>
       </div>
       <div className="footer-item" style={{gridArea: "box-3"}}></div>
-    </div>
+    </footer>
     </>
   );
 };
