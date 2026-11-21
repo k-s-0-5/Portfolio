@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 :root {
-  --background-color: #0f1715;
-  --card-color: #050e0b;
-  --bright-text-color: #66eeaa;
-  --text-color: #b6e8cf;
+  --background-color: rgb(15, 23, 21);
+  --card-color: rgb(5, 14, 11);
+  --bright-text-color: rgb(102, 238, 170);
+  --text-color: rgb(182, 232, 207);
 }
 
 * {
@@ -36,13 +36,12 @@ a,
 button,
 p {
   color: var(--text-color);
-  font-size: 1.1em;
+  font-size: 1.0em;
 }
 a {
   text-decoration: underline;
   color: var(--bright-text-color);
 }
-a,
 button {
   font-weight: 500;
   border: none;
@@ -112,7 +111,32 @@ h3 {
   grid-area: projects;
   display: flex;
   position: relative;
-  width: 100%;
+  width: 100%; 
+  padding: 0.5em 0;
+  border-radius: 0;
+}
+.projects::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  
+  background: 
+    linear-gradient(
+      to right,
+      rgba(15, 23, 21, 1) 0px, 
+      rgba(15, 23, 21, 1) 5px,
+      rgba(15, 23, 21, .7) 20px,
+      rgba(15, 23, 21, 0) 50px
+    ),
+    linear-gradient(
+      to left,
+      rgba(15, 23, 21, 1) 0px, 
+      rgba(15, 23, 21, 1) 5px,
+      rgba(15, 23, 21, .7) 20px,
+      rgba(15, 23, 21, 0) 50px
+    );
 }
 
 .spiel {
@@ -123,7 +147,7 @@ h3 {
   padding: 1em;
   overflow-y: scroll;
   scrollbar-width: none;
-  background-color: var(--card-color);
+  background-color: rgba(5, 14, 11, .5);
 }
 
 .stack {
@@ -193,6 +217,7 @@ h3 {
   background-color: var(--bright-text-color);
   color: var(--card-color);
   border-radius: 100%;
+  touch-action: pan-y;
 }
 .left {
   left: 0;

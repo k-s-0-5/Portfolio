@@ -15,12 +15,14 @@ const Hero = () => {
         </div>
         <div className="spiel">
           <p>
-            I got into programming because I wanted to make video games as a
-            kid. That grew into a general love of building software, and after
-            finishing an IT degree I am now looking for work in software
-            engineering. Most of my personal projects have been full-stack, my
-            most recent is a local web chat application with a decent list of
-            features. If you want to build something, please reach out to me at{" "}
+            I am a recent graduate and full-stack software developer, seeking an
+            opportunity to build real world projects. I am motivated by the
+            prospect of working on creative and complex projects, especially
+            with a team that brings vast and varying experiences and viewpoints.
+            Through academics and personal projects I have accrued experience in
+            website, application, and game development. My most recent project
+            is a local web chat application with a decent list of features. If
+            you want to build something, please reach out to me at {" "}
             <a href="mailto:KjeldS2005@gmail.com">KjeldS2005@gmail.com</a> or
             check out my work on <a href="https://github.com/k-s-0-5">GitHub</a>
             .

@@ -1,5 +1,5 @@
 import "../Stylesheet.css";
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Carousel = () => {
   const [index, setIndex] = useState(0);
@@ -9,6 +9,7 @@ const Carousel = () => {
   const cardsRef = useRef([]);
   const groupRef = useRef([]);
   const isMoving = useRef(false);
+  const touchRef = useRef(0);
 
   useEffect(() => {
     groupRef.current = carouselRef.current.querySelectorAll(".group");
@@ -21,6 +22,20 @@ const Carousel = () => {
         parseFloat(getComputedStyle(carouselRef.current).fontSize),
     );
   }, []);
+
+  function touchStart(event){
+    const finger = event.touches[0];
+    touchRef.current = finger.clientX;
+  }
+
+  function touchEnd(event){
+    const finger = event.changedTouches[0];
+    const deltaX = finger.clientX - touchStart.current;
+    if (Math.abs(deltaX) > 30) {
+      updateIndex(1);
+    }
+  }
+
 
   function updateIndex(moveBy) {
     if (isMoving.current) {
@@ -64,7 +79,7 @@ const Carousel = () => {
           ></path>
         </svg>
       </button>
-      <div className="scroll" id={"scroll"} ref={trackRef}>
+      <div className="scroll" id={"scroll"} ref={trackRef} onTouchStart={() => touchStart()} onTouchEnd={() => touchEnd()}>
         <div
           className="carousel"
           ref={carouselRef}
