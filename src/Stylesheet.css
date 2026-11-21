@@ -220,12 +220,18 @@ h3 {
   touch-action: pan-y;
 }
 .left {
-  left: 0;
+  left: -10px;
   transform: translate(-100%, -90%);
 }
 .right {
-  right: 0;
+  right: -10px;
   transform: translate(100%, -90%);
+}
+
+@media screen and (max-width: 520px) {
+  .carousel-control {
+   display: none;
+  }
 }
 
 .card {

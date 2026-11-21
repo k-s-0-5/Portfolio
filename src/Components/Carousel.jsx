@@ -30,9 +30,11 @@ const Carousel = () => {
 
   function touchEnd(event){
     const finger = event.changedTouches[0];
-    const deltaX = finger.clientX - touchStart.current;
-    if (Math.abs(deltaX) > 30) {
+    const deltaX = finger.clientX - touchRef.current;
+    if (deltaX < -30) {
       updateIndex(1);
+    } else if (deltaX > 30) {
+      updateIndex(-1);
     }
   }
 
@@ -79,7 +81,7 @@ const Carousel = () => {
           ></path>
         </svg>
       </button>
-      <div className="scroll" id={"scroll"} ref={trackRef} onTouchStart={() => touchStart()} onTouchEnd={() => touchEnd()}>
+      <div className="scroll" id={"scroll"} ref={trackRef} onTouchStart={(event) => touchStart(event)} onTouchEnd={(event) => touchEnd(event)}>
         <div
           className="carousel"
           ref={carouselRef}
